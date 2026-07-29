@@ -38,3 +38,8 @@ changes to this repository.
 
 A maintainer will review your pull request. Once it has been approved and any
 required checks pass, it will be merged. Thanks for contributing!
+
+## Sticker raffle
+
+Everyone who contributes is entered into our sticker raffle — merge a pull
+request and you're in the running to win some swag. Thanks for helping out!
