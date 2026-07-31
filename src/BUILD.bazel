@@ -1,0 +1,23 @@
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
+py_library(
+    name = "hello_lib",
+    srcs = ["hello.py"],
+    # Put this directory on the import path so ``import hello`` resolves.
+    imports = ["."],
+    visibility = ["//visibility:public"],
+)
+
+py_binary(
+    name = "hello",
+    srcs = ["hello.py"],
+    main = "hello.py",
+    visibility = ["//visibility:public"],
+)
+
+py_test(
+    name = "hello_test",
+    size = "small",
+    srcs = ["hello_test.py"],
+    deps = [":hello_lib"],
+)
