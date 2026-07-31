@@ -1,0 +1,2 @@
+# Use bzlmod for external dependency resolution.
+common --enable_bzlmod

@@ -1,0 +1,19 @@
+"""Hermetic Python hello-world built with Bazel (bzlmod)."""
+
+module(
+    name = "issuefleet_smoke",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "rules_python", version = "1.4.1")
+
+# Pin a hermetic CPython interpreter so the build does not depend on the
+# system Python.
+PYTHON_VERSION = "3.12"
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    is_default = True,
+    python_version = PYTHON_VERSION,
+)
+use_repo(python, "python_3_12")
