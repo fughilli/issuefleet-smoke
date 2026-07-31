@@ -17,6 +17,7 @@ py_binary(
 
 py_test(
     name = "hello_test",
+    size = "small",
     srcs = ["hello_test.py"],
     deps = [":hello_lib"],
 )
